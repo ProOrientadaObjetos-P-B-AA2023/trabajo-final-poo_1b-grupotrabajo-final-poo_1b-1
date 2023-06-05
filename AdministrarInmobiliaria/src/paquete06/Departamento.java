@@ -11,84 +11,83 @@ import paquete05.Constructora;
  */
 public class Departamento {
 
-    private Propietario propietario;
-    private Barrio barrio;
-    private Ciudad ciudad;
+    private double precioMetroCuadrado;
+    private double numeroMetrosCuadrados;
+    private double valorAlicuotaMensual;
+    private double costoFinal;
     private String nombreEdificio;
-    private String ubicacionDepartamento;
-    private Constructora constructora;
+    private String ubicacionDepartamentoE;
 
-    public Departamento(Propietario propietario, Barrio barrio, Ciudad ciudad, String nombreEdificio, String ubicacionDepartamento, Constructora constructora) {
-        this.propietario = propietario;
-        this.barrio = barrio;
-        this.ciudad = ciudad;
+    public Departamento(double precioMetroCuadrado, double numeroMetrosCuadrados, double valorAlicuotaMensual, String ubicacionDepartamentoE, String nombreEdificio) {
+        this.precioMetroCuadrado = precioMetroCuadrado;
+        this.numeroMetrosCuadrados = numeroMetrosCuadrados;
+        this.valorAlicuotaMensual = valorAlicuotaMensual;
         this.nombreEdificio = nombreEdificio;
-        this.ubicacionDepartamento = ubicacionDepartamento;
-        this.constructora = constructora;
+        this.ubicacionDepartamentoE = ubicacionDepartamentoE;
     }
 
-    public Propietario getPropietario() {
-        return propietario;
+    public void setPrecioMetroCuadrado(double precioMetroCuadrado) {
+        this.precioMetroCuadrado = precioMetroCuadrado;
     }
 
-    public void setPropietario(Propietario propietario) {
-        this.propietario = propietario;
+    public void setNumeroMetrosCuadrados(double numeroMetrosCuadrados) {
+        this.numeroMetrosCuadrados = numeroMetrosCuadrados;
     }
 
-    public Barrio getBarrio() {
-        return barrio;
+    public void setValorAlicuotaMensual(double valorAlicuotaMensual) {
+        this.valorAlicuotaMensual = valorAlicuotaMensual;
     }
 
-    public void setBarrio(Barrio barrio) {
-        this.barrio = barrio;
-    }
-
-    public Ciudad getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(Ciudad ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public String getNombreEdificio() {
-        return nombreEdificio;
+    public void calcularCostoFinal() {
+        this.costoFinal = (this.numeroMetrosCuadrados * this.precioMetroCuadrado) + (valorAlicuotaMensual * 12);
     }
 
     public void setNombreEdificio(String nombreEdificio) {
         this.nombreEdificio = nombreEdificio;
     }
 
-    public String getUbicacionDepartamento() {
-        return ubicacionDepartamento;
+    public void setUbicacionDepartamentoE(String ubicacionDepartamentoE) {
+        this.ubicacionDepartamentoE = ubicacionDepartamentoE;
     }
 
-    public void setUbicacionDepartamento(String ubicacionDepartamento) {
-        this.ubicacionDepartamento = ubicacionDepartamento;
+    public double getPrecioMetroCuadrado() {
+        return precioMetroCuadrado;
     }
 
-    public Constructora getConstructora() {
-        return constructora;
+    public double getNumeroMetrosCuadrados() {
+        return numeroMetrosCuadrados;
     }
 
-    public void setConstructora(Constructora constructora) {
-        this.constructora = constructora;
+    public double getValorAlicuotaMensual() {
+        return valorAlicuotaMensual;
+    }
+
+    public double getCostoFinal() {
+        return costoFinal;
+    }
+
+    public String getNombreEdificio() {
+        return nombreEdificio;
+    }
+
+    public String getUbicacionDepartamentoE() {
+        return ubicacionDepartamentoE;
     }
 
     @Override
     public String toString() {
-        return String.format("Propietario: %s"
+        return String.format("Precio por metro cuadrado %.2f"
+                + "\nNumero de metros cuadrados: %.2f"
+                + "\nValor Mensual: %.2f"
+                + "\nCosto Final: %.2f"
                 + "\nNombre del Edificio: %s"
-                + "\nBarrio: %s"
-                + "\nCiudad: %s"
-                + "\nUbicacion del edificio: %s"
-                + "\nConstructora: %s",
-                this.propietario,
+                + "\nUbicacion del departamento: %s",
+                this.precioMetroCuadrado,
+                this.numeroMetrosCuadrados,
+                this.valorAlicuotaMensual,
+                this.costoFinal,
                 this.nombreEdificio,
-                this.barrio,
-                this.ciudad,
-                this.ubicacionDepartamento,
-                this.constructora);
+                this.ubicacionDepartamentoE);
     }
 
 }

@@ -1,5 +1,7 @@
 package paquete02;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author reroes
@@ -9,75 +11,45 @@ public class Propietario {
     private String nombres;
     private String apellidos;
     private String identificacion;
-    private double precioMetroCuadrado;
-    private double numeroMetrosCuadrados;
-    private double cuotaMensual;
-    private double costoFinal;
+    private ArrayList barrio;
 
-    public Propietario(String nombres, String apellidos, String identificacion, double precioMetroCuadrado, double numeroMetrosCuadrados, double cuotaMensual, double costoFinal) {
+    public Propietario(String nombres, String apellidos, String identificacion, ArrayList barrio) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.identificacion = identificacion;
-        this.precioMetroCuadrado = precioMetroCuadrado;
-        this.numeroMetrosCuadrados = numeroMetrosCuadrados;
-        this.cuotaMensual = cuotaMensual;
-        this.costoFinal = costoFinal;
-    }
-
-    public String getNombres() {
-        return nombres;
+        this.barrio = barrio;
     }
 
     public void setNombres(String nombres) {
         this.nombres = nombres;
     }
 
-    public String getApellidos() {
-        return apellidos;
-    }
-
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
-    }
-
-    public String getIdentificacion() {
-        return identificacion;
     }
 
     public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
 
-    public double getPrecioMetroCuadrado() {
-        return precioMetroCuadrado;
+    public void setBarrio(ArrayList barrio) {
+        this.barrio = barrio;
     }
 
-    public void setPrecioMetroCuadrado(double precioMetroCuadrado) {
-        this.precioMetroCuadrado = precioMetroCuadrado;
+    public String getNombres() {
+        return nombres;
     }
 
-    public double getNumeroMetrosCuadrados() {
-        return numeroMetrosCuadrados;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setNumeroMetrosCuadrados(double numeroMetrosCuadrados) {
-        this.numeroMetrosCuadrados = numeroMetrosCuadrados;
+    public String getIdentificacion() {
+        return identificacion;
     }
 
-    public double getCuotaMensual() {
-        return cuotaMensual;
-    }
-
-    public void setCuotaMensual(double cuotaMensual) {
-        this.cuotaMensual = cuotaMensual;
-    }
-
-    public double getCostoFinal() {
-        return costoFinal;
-    }
-
-    public void setCostoFinal(double costoFinal) {
-        this.costoFinal = costoFinal;
+    public ArrayList getBarrio() {
+        return barrio;
     }
 
     @Override
@@ -85,17 +57,11 @@ public class Propietario {
         return String.format("Nombres: %s"
                 + "\nApellidos: %s"
                 + "\nIdentificacion: %s"
-                + "\nPrecio por metro Cuadrado: %.2f"
-                + "\nNumero de metros Cuadrados: %.2f"
-                + "\nCuota Mensual: %.2f"
-                + "\nCosto Final: %.2f",
+                + "\nBarrio: %s",
                 this.nombres,
                 this.apellidos,
                 this.identificacion,
-                this.precioMetroCuadrado,
-                this.numeroMetrosCuadrados,
-                this.cuotaMensual,
-                this.costoFinal);
+                this.barrio);
     }
 
 }
